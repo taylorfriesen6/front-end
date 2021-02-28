@@ -75,7 +75,7 @@ export default function SignUp() {
 
 return(
     <div className='signup'>
-        <h1>recipe site recipedsfnkgfdknjfgdx</h1>
+        <h1>.</h1>
 
 
         <SignUpForm
