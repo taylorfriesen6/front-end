@@ -47,6 +47,9 @@ function EditRecipe() {
             <textarea name='instructions' value={formState.instructions} onChange={handleChange}/>
           </label>
         </p>
+        <p>
+          <input type='submit' value='Submit'/>
+        </p>
       </form>
     </div>
   )
