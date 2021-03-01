@@ -17,13 +17,13 @@ function DisplayPage() {
     <div>
       <h1>{recipe.title}</h1>
       {/* the links on the following line should be replaced with React Links once routing is set up */}
-      <a href='#'>Edit Recipe</a> <a href='#'>Delete Recipe</a>
+      <a href='/'>Edit Recipe</a> <a href='/'>Delete Recipe</a>
       <p>categories: <em>{recipe.category}</em></p>
       <p>source: {recipe.source}</p>
       <h2>Ingredients</h2>
       <ul>
-        {ingredientsArray.map(ingredient => {
-          return <li>{ingredient}</li>;
+        {ingredientsArray.map((ingredient, index) => {
+          return <li key={index}>{ingredient}</li>;
         })}
       </ul>
       <h2>Directions</h2>
