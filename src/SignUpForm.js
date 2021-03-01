@@ -13,13 +13,22 @@ export default function SignUpForm(props) {
     }
 
     const onChange = evt => {
-        const { name, value, type, checked } = evt.target
-        const valueToUse = type === 'checkbox' ? checked : value
-        change(name, valueToUse)
+        const { name } = evt.target
+        change(name)
       }
     return(
     <form className='form container' onSubmit={onSubmit}>
       <div>
+
+        <label>Username
+            <input
+            value={values.username}
+            onChange={onChange}
+            name='username'
+            type='text'
+            />
+        </label>
+
         <label>First Name
             <input
             value={values.firstname}
@@ -37,6 +46,31 @@ export default function SignUpForm(props) {
             type='text'
             />
         </label>
+
+        <label>Email
+            <input
+            value={values.email}
+            onChange={onChange}
+            name='firstname'
+            type='text'
+            />
+        </label>
+
+        <label>Password
+            <input
+            value={values.password}
+            onChange={onChange}
+            name='firstname'
+            type='text'
+            />
+        </label>
+
+        
+
+        
+
+        
+
         </div>
     </form>
     )

@@ -1,33 +1,33 @@
 import LoginForm from './LoginForm'
 import React, {useState, useEffect} from "react";
-import formSchema from './formSchema'
+import loginSchema from './loginSchema'
 import * as yup from 'yup'
 import {Link} from "react-router-dom";
 import axios from 'axios'
 
 const initialFormValues = {
     username: '',
-    firstname: '',
-    lastname: '',
-    email: '',
+    // firstname: '',
+    // lastname: '',
+    // email: '',
     password: '',
-    title: '',
-    category: '',
-    source: '',
-    ingredients: '',
-    instructions: '',
+    // title: '',
+    // category: '',
+    // source: '',
+    // ingredients: '',
+    // instructions: '',
   }
   const initialFormErrors = {
     username: '',
-    firstname: '',
-    lastname: '',
-    email: '',
+    // firstname: '',
+    // lastname: '',
+    // email: '',
     password: '',
-    title: '',
-    category: '',
-    source: '',
-    ingredients: '',
-    instructions: '',
+    // title: '',
+    // category: '',
+    // source: '',
+    // ingredients: '',
+    // instructions: '',
   }
 
   const initialDisabled = true
@@ -40,7 +40,7 @@ export default function Login() {
 
 
     const inputChange = (name, value) => {
-        yup.reach(formSchema, name)
+        yup.reach(loginSchema, name)
           .validate(value)
           .then(() => {
             setFormErrors({...formErrors, [name]: ''})
@@ -58,25 +58,25 @@ export default function Login() {
     const formSubmit = () => {
         const loginSubmit = {
             username: formValues.username.trim(),
-            firstname: formValues.firstname.trim(),
-            lastname: formValues.lastname.trim(),
-            email: formValues.email.trim(),
+            //firstname: formValues.firstname.trim(),
+            //lastname: formValues.lastname.trim(),
+            //email: formValues.email.trim(),
             password: formValues.firstname.trim(),
-            title: formValues.title.trim(),
-            category: formValues.category.trim(),
-            source: formValues.source.trim(),
-            ingredients: formValues.ingredients.trim(),
-            instructions: formValues.instructions.trim(),
+            // title: formValues.title.trim(),
+            // category: formValues.category.trim(),
+            // source: formValues.source.trim(),
+            // ingredients: formValues.ingredients.trim(),
+            // instructions: formValues.instructions.trim(),
         }
         axios.post('', loginSubmit).then(res => {
           console.log(res)
         }).catch(e => console.log(e))
-      }
+      };
     
 
-        useEffect(() => {
-        formSchema.isValid(formValues).then(valid => setDisabled(!valid))
-        }, [formValues])
+      useEffect(() => {
+      loginSchema.isValid(formValues).then(valid => setDisabled(!valid))
+      }, [formValues])
 
 
 return(

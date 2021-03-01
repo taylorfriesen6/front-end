@@ -1,6 +1,6 @@
 import SignUpForm from './SignUpForm'
 import React, {useState, useEffect} from "react";
-import formSchema from './formSchema'
+import formSchema from './loginSchema'
 import * as yup from 'yup'
 import {Link} from "react-router-dom";
 import axios from 'axios'
